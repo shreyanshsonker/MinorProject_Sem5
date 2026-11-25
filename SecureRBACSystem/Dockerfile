@@ -1,5 +1,5 @@
 # Stage 1: Build the WAR file using Maven 3.9 and JDK 27
-FROM maven:3.9-eclipse-temurin-27 AS build
+FROM maven:3.9-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
