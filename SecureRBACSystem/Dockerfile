@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run on Tomcat 10.1 with JDK 27
-FROM tomcat:10.1-jdk27
+FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
